@@ -1,0 +1,5 @@
+<%
+url = "http://127.0.0.1/img/" + THIS.args[0] + "/" + THIS.args[0] + ".jpg"
+%>
+
+<img src="<% print url %>" name="Test" width="100%" height="100%">
