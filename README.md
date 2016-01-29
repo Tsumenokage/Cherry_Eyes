@@ -1,4 +1,4 @@
-# Cherry_Eyes
+﻿# Cherry_Eyes
 Project to create and display eyes animation for the Robot Cherry in Python
 
 
@@ -22,12 +22,12 @@ Project to create and display eyes animation for the Robot Cherry in Python
 3. Regarder le script browser.py dans le dossier du dépot, il contient une instruction pour ouvrir le navigateur de base il s'agit de : webbrowser.open_new("127.0.0.1/eye.pih/neutral"). 
 Cette ligne va ouvrir un navigateur et afficher la page eye.pih avec un argument : "neutral". Cela va indiquer quelle émotion est à afficher. 
 Actuellement il y a les émotions suivantes : 
-	*neutral
-	*happy
-	*sleepy
-	*angry
-	*sad
-	*wink_r
-	*wink_l
+	* neutral
+	* happy
+	* sleepy
+	* angry
+	* sad
+	* wink_r
+	* wink_l
 
-En changeant l'argument neutral du script python par une autre émotion on aura une autre image qui s'affichera.
+	En changeant l'argument neutral du script python par une autre émotion on aura une autre image qui s'affichera.
