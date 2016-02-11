@@ -1,0 +1,55 @@
+<%
+url = "http://127.0.0.1/img/" + THIS.args[0] + "/" + THIS.args[0] + ".jpg"
+_var = "angry"
+_imgAngry = "http://127.0.0.1/img/angry/angry.jpg"
+_imgHappy = "http://127.0.0.1/img/happy/happy.jpg"
+_imgSad = "http://127.0.0.1/img/sad/sad.jpg"
+_imgNeutral = "http://127.0.0.1/img/neutral/neutral.jpg"
+
+_imgMasquePaupiereSupDroit ="http://127.0.0.1/img/masquePaupiereSupDroit.jpg"
+_imgMasquePaupiereSupGauche ="http://127.0.0.1/img/masquePaupiereSupGauche.jpg"
+
+_imgMasquePaupiereInfDroit ="http://127.0.0.1/img/masquePaupiereInfDroit.jpg"
+_imgMasquePaupiereInfGauche ="http://127.0.0.1/img/masquePaupiereInfGauche.jpg"
+
+_lienStyleSheet = "http://127.0.0.1/eyeCherry.css" 
+
+%>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+	<LINK href="<% print _lienStyleSheet %>" rel="stylesheet" type="text/css">
+
+    <title>Projet Cherry</title>
+	
+	<script type="text/javascript">
+		window.onload=function()
+		{
+				
+		}
+
+   </script>
+</head>
+
+<body>
+	
+	<form>
+	
+	<div id="cadre">
+		<ul id="sContent">
+			
+			<li><img src="<% print url %>" id="yeux" class="superpose" alt="Image yeux" width="100%" height="100%" />  </li>
+			<li><img src="<% print _imgMasquePaupiereSupGauche %>" id="masquePaupiereSupGauche" active="true" class="superpose" alt="Image Masque" width="50%" height="50%" />  </li>
+			<li><img src="<% print _imgMasquePaupiereSupDroit %>" id="masquePaupiereSupDroit" active="true" class="superpose" alt="Image Masque" width="50%" height="50%" />  </li>
+			<li><img src="<% print _imgMasquePaupiereInfGauche %>" id="masquePaupiereInfGauche" active="true" class="superpose" alt="Image Masque"  width="50%" height="50%"/>  </li>
+			<li><img src="<% print _imgMasquePaupiereInfDroit %>" id="masquePaupiereInfDroit" active="true" class="superpose" alt="Image Masque"  width="50%" height="50%"/>  </li>
+			
+		</ul>
+	</div>
+		
+	</form>
+
+</body>
+</html>
