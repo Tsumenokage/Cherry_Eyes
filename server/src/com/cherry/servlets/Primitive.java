@@ -1,6 +1,10 @@
 package com.cherry.servlets;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.URL;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -28,8 +32,14 @@ public class Primitive extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 
-		Runtime runtime = Runtime.getRuntime();
-		runtime.exec("python C:\\Cherry_Eyes\\browser.py");
+		//Runtime runtime = Runtime.getRuntime();
+		//runtime.exec("python C:\\Cherry_Eyes\\browser.py");
+		/*URL url = new URL("http://127.0.0.1:8080/motor/list.json");
+		try (BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream(), "UTF-8"))) {
+		    for (String line; (line = reader.readLine()) != null;) {
+		        System.out.println(line);
+		    }
+		}*/
 		this.getServletContext().getRequestDispatcher( "/Index.jsp" ).forward( request, response );
 	}
 
