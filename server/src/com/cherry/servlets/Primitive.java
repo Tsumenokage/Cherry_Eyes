@@ -3,6 +3,7 @@ package com.cherry.servlets;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.net.MalformedURLException;
 import java.net.URL;
 
 import javax.servlet.ServletException;
@@ -32,14 +33,37 @@ public class Primitive extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 
-		//Runtime runtime = Runtime.getRuntime();
-		//runtime.exec("python C:\\Cherry_Eyes\\browser.py");
-		/*URL url = new URL("http://127.0.0.1:8080/motor/list.json");
-		try (BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream(), "UTF-8"))) {
-		    for (String line; (line = reader.readLine()) != null;) {
-		        System.out.println(line);
-		    }
-		}*/
+		
+		String commande;
+		String ip = request.getParameter("adresse");
+		String port = request.getParameter("port");
+		String primitive = request.getParameter("primitive");
+		commande = "http://" + ip + ":" + port + "/" + primitive;
+		System.out.println(commande);
+		if(ip != null && port != null && primitive != null)
+		{
+			URL url = null;
+			try
+			{
+				url = new URL(commande);
+			}
+			catch(MalformedURLException e)
+			{
+				System.err.println(e.getMessage());	
+			}
+						
+			try 
+			{
+				BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream(), "UTF-8"));
+			    for (String line; (line = reader.readLine()) != null;) {
+			        System.out.println(line);
+			    }
+			}
+			catch(IOException ioe)
+			{
+				System.err.println(ioe.getMessage());
+			}
+		}
 		this.getServletContext().getRequestDispatcher( "/Index.jsp" ).forward( request, response );
 	}
 
