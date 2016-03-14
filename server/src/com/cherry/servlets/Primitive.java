@@ -74,5 +74,27 @@ public class Primitive extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
+	
+	public static void playSpeakPrimitive(String colorString, String moodString, String ip, String port){
+		
+			String primitive = "eye";
+			String propertyColor = "color";
+			String propertyMood = "mood";
+    	
+			String strColor = "\"" + colorString + "\"";
+			String strMood = "\"" + moodString + "\"";
+			String url = "http://" + ip + ":" + port + "/";
+			// Start Primitive
+    		
+    		//System.out.println("\nText to speak :" + txtString);
+			try {
+				HttpURLConnectionExample.sendPost(url + "/primitive/" + primitive + "/property/" + propertyColor +"/value.json", strColor);
+				HttpURLConnectionExample.sendPost(url + "/primitive/" + primitive + "/property/" + propertyMood +"/value.json", strMood);
+				HttpURLConnectionExample.sendGet(url + "/primitive/" + primitive + "/start.json");
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}	
+	}
 
 }

@@ -21,7 +21,7 @@
                 <br />
 
                 <label for="primitive">Commande de la Primitive<span class="requis">*</span></label>
-                <input type="text" id="primitive" name="primitive" value="" size="20" maxlength="20" />
+                <input type="text" id="primitive" name="primitive" value="" size="50" />
                 <br />
 
                 <input type="submit" value="Execution" class="sansLabel" />
