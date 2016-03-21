@@ -29,7 +29,7 @@ public class Primitive extends HttpServlet {
 		// TODO Auto-generated method stub
 
 		Runtime runtime = Runtime.getRuntime();
-		runtime.exec("python C:\\Cherry_Eyes\\browser.py");
+		runtime.exec("python C:\\Users\\Jérémy\\Desktop\\Cherry_Eyes\\browser.py");
 		this.getServletContext().getRequestDispatcher( "/Index.jsp" ).forward( request, response );
 	}
 
