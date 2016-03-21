@@ -38,31 +38,41 @@ public class Primitive extends HttpServlet {
 		String ip = request.getParameter("adresse");
 		String port = request.getParameter("port");
 		String primitive = request.getParameter("primitive");
-		commande = "http://" + ip + ":" + port + "/" + primitive;
-		System.out.println(commande);
-		if(ip != null && port != null && primitive != null)
+		String color = request.getParameter("color");
+		String mood = request.getParameter("mood");
+		
+		if(color.isEmpty() || mood.isEmpty())
 		{
-			URL url = null;
-			try
+			commande = "http://" + ip + ":" + port + "/" + primitive;
+			System.out.println(commande);
+			if(ip != null && port != null && primitive != null)
 			{
-				url = new URL(commande);
+				URL url = null;
+				try
+				{
+					url = new URL(commande);
+				}
+				catch(MalformedURLException e)
+				{
+					System.err.println(e.getMessage());	
+				}
+							
+				try 
+				{
+					BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream(), "UTF-8"));
+				    for (String line; (line = reader.readLine()) != null;) {
+				        System.out.println(line);
+				    }
+				}
+				catch(IOException ioe)
+				{
+					System.err.println(ioe.getMessage());
+				}
 			}
-			catch(MalformedURLException e)
-			{
-				System.err.println(e.getMessage());	
-			}
-						
-			try 
-			{
-				BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream(), "UTF-8"));
-			    for (String line; (line = reader.readLine()) != null;) {
-			        System.out.println(line);
-			    }
-			}
-			catch(IOException ioe)
-			{
-				System.err.println(ioe.getMessage());
-			}
+		}
+		else
+		{
+			playSpeakPrimitive(color,mood,ip,port);
 		}
 		this.getServletContext().getRequestDispatcher( "/Index.jsp" ).forward( request, response );
 	}
@@ -77,13 +87,13 @@ public class Primitive extends HttpServlet {
 	
 	public static void playSpeakPrimitive(String colorString, String moodString, String ip, String port){
 		
-			String primitive = "eye";
-			String propertyColor = "color";
-			String propertyMood = "mood";
+			String primitive = "eyes_behave";
+			String propertyColor = "colorEye";
+			String propertyMood = "moodEye";
     	
 			String strColor = "\"" + colorString + "\"";
 			String strMood = "\"" + moodString + "\"";
-			String url = "http://" + ip + ":" + port + "/";
+			String url = "http://" + ip + ":" + port;
 			// Start Primitive
     		
     		//System.out.println("\nText to speak :" + txtString);
