@@ -16,15 +16,15 @@
                 <input type="text" id="adresse" name="adresse" value="" size="20" maxlength="60" />
                 <br />
 
-	            <label for="humeur">Humeur<span class="requis">*</span></label>
-                <input type="text" id="humeur" name="humeur" value="" size="20" maxlength="60" />
+				<label for="port">Port du robot <span class="requis">*</span></label>
+                <input type="text" id="port" name="port" value="" size="20" maxlength="60" />
                 <br />
 
-                <label for="primitive">Chemin de la Primitive<span class="requis">*</span></label>
-                <input type="text" id="primitive" name="primitive" value="" size="20" maxlength="20" />
+                <label for="primitive">Commande de la Primitive<span class="requis">*</span></label>
+                <input type="text" id="primitive" name="primitive" value="" size="50" />
                 <br />
 
-                <input type="submit" value="Inscription" class="sansLabel" />
+                <input type="submit" value="Execution" class="sansLabel" />
                 <br />
             </fieldset>
         </form>
