@@ -23,6 +23,16 @@
                 <label for="primitive">Commande de la Primitive<span class="requis">*</span></label>
                 <input type="text" id="primitive" name="primitive" value="" size="50" />
                 <br />
+                
+                <label for="couleur">Couleur des yeux</label>
+                <input type="test" id="color" name="color" value="" size="20"/>
+                <br />
+                
+                 <label for="emotion">Émotions des yeux</label>
+                <input type="test" id="mood" name="mood" value="" size="20"/>
+                <br />
+                
+                
 
                 <input type="submit" value="Execution" class="sansLabel" />
                 <br />
