@@ -12,6 +12,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import synesketch.emotion.EmotionalState;
+import synesketch.emotion.Empathyscope;
+
 /**
  * Servlet implementation class Primitive
  */
@@ -33,7 +36,6 @@ public class Primitive extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 
-		
 		String commande;
 		String ip = request.getParameter("adresse");
 		String port = request.getParameter("port");
